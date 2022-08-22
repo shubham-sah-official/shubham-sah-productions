@@ -1,4 +1,5 @@
 {
+  "homepage": "http://shubham-sah-official.github.io/shubham-sah-productions",
   "name": "landingpage-react-template",
   "private": true,
   "dependencies": {
@@ -12,6 +13,8 @@
     "smooth-scroll": "^16.1.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -31,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
