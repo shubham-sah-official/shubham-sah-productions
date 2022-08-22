@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shubham-sah-productions/static/css/main.ae42ac5f.css",
+    "main.js": "/shubham-sah-productions/static/js/main.5f795a9b.js",
+    "index.html": "/shubham-sah-productions/index.html",
+    "main.ae42ac5f.css.map": "/shubham-sah-productions/static/css/main.ae42ac5f.css.map",
+    "main.5f795a9b.js.map": "/shubham-sah-productions/static/js/main.5f795a9b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae42ac5f.css",
+    "static/js/main.5f795a9b.js"
+  ]
+}
