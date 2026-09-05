@@ -17,7 +17,7 @@
   --header-h: 96px;
   --max: 1180px;
   --font-display: "Syne", system-ui, sans-serif;
-  --font-brand: "Imperial Script", "Great Vibes", cursive;
+  --font-brand: "Cinzel", "Syne", serif;
   --font-body: "Outfit", system-ui, sans-serif;
 }
 
@@ -189,10 +189,10 @@ h3 {
 
 .brand-text strong {
   font-family: var(--font-brand);
-  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.15;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
   color: var(--gold);
 }
 
@@ -966,8 +966,8 @@ textarea {
 
 @media (max-width: 680px) {
   .brand-text strong {
-    font-size: 1.45rem;
-    letter-spacing: 0.02em;
+    font-size: 1.12rem;
+    letter-spacing: 0.04em;
   }
 
   .brand-text span {
