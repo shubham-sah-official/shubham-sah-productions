@@ -9,7 +9,7 @@
   --gold-deep: #8a6410;
   --gold-dim: rgba(255, 246, 200, 0.2);
   --gold-metal: linear-gradient(115deg, #7a5810 0%, #e8c547 12%, #fff6c8 24%, #ffffff 38%, #f5d76e 50%, #fffef5 62%, #e0b83a 76%, #fff1b0 88%, #b8860b 100%);
-  --gold-button: #ffeb3b;
+  --gold-button: var(--gold);
   --line: rgba(246, 241, 232, 0.1);
   --danger: #c45c4a;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
@@ -281,17 +281,18 @@ h3 {
 }
 
 .btn-gold {
-  background: var(--gold-button);
+  background: var(--gold);
   color: #111;
   -webkit-text-fill-color: #111;
   font-weight: 700;
-  border-color: #ffeb3b;
+  border-color: var(--gold);
   box-shadow: none;
 }
 
 .btn-gold:hover {
   transform: translateY(-1px);
-  background: #fdd835;
+  background: #e4c043;
+  border-color: #e4c043;
   filter: none;
   box-shadow: none;
 }
@@ -748,9 +749,9 @@ section {
 #f-photo:checked ~ .filters label[for="f-photo"],
 #f-music:checked ~ .filters label[for="f-music"],
 #f-cinema:checked ~ .filters label[for="f-cinema"] {
-  background: var(--gold-button);
+  background: var(--gold);
   color: #111;
-  border-color: #ffeb3b;
+  border-color: var(--gold);
 }
 
 .contact-layout {
@@ -835,9 +836,9 @@ textarea {
 }
 
 .socials a:hover {
-  background: var(--gold-button);
+  background: var(--gold);
   color: #111;
-  border-color: #ffeb3b;
+  border-color: var(--gold);
 }
 
 .map-embed {
