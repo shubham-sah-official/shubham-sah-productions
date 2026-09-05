@@ -665,12 +665,13 @@ section {
 .story-list {
   margin-top: 1.4rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .story-list li {
   padding-left: 1rem;
   border-left: 2px solid var(--gold);
+  line-height: 1.65;
 }
 
 .story-list strong {
