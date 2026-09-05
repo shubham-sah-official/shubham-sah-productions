@@ -14,7 +14,7 @@
   --danger: #c45c4a;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
   --radius: 18px;
-  --header-h: 102px;
+  --header-h: 96px;
   --max: 1180px;
   --font-display: "Syne", system-ui, sans-serif;
   --font-brand: "Imperial Script", "Great Vibes", cursive;
@@ -176,8 +176,7 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   .brand img,
-  .brand-logo,
-  .brand-text strong {
+  .brand-logo {
     animation: none;
   }
 }
@@ -185,80 +184,26 @@ h3 {
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .brand-text strong {
-  position: relative;
-  display: inline-block;
   font-family: var(--font-brand);
-  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
   font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1.18;
-  padding: 0 0.15em 0.22em;
-  transform: rotate(-4deg);
-  transform-origin: left center;
-  background: linear-gradient(110deg, #7a5810 0%, #e8c547 16%, #fff6c8 32%, #ffffff 48%, #f5d76e 62%, #fffef5 76%, #e0b83a 100%);
-  background-size: 200% 200%;
-  animation: metalShift 3.8s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 14px rgba(255, 246, 200, 0.4));
-}
-
-.brand-text strong em {
-  font-style: inherit;
-  font-family: inherit;
-}
-
-.brand-text strong em::before {
-  content: "✦";
-  display: inline-block;
-  margin: 0 0.18em 0 0.12em;
-  font-size: 0.32em;
-  vertical-align: middle;
-  color: #f0cc4a;
-  -webkit-text-fill-color: #f0cc4a;
-  transform: translateY(-0.15em);
-}
-
-.brand-text strong::after {
-  content: "";
-  position: absolute;
-  left: 6%;
-  right: 4%;
-  bottom: 0;
-  height: 11px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 14' fill='none'%3E%3Cpath d='M2 9C28 15 46 3 78 8C110 13 138 4 158 7' stroke='%23f0cc4a' stroke-width='1.6' stroke-linecap='round'/%3E%3Cpath d='M128 4c6 6 14 8 22 3' stroke='%23fff4b8' stroke-width='1.1' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
-  pointer-events: none;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  color: var(--gold);
 }
 
 .brand-text span {
-  margin-top: 0.08rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin-top: 0.1rem;
   font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 0.46em;
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: var(--gold-bright);
-}
-
-.brand-text span::before,
-.brand-text span::after {
-  content: "";
-  width: 22px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #f0cc4a);
-}
-
-.brand-text span::after {
-  background: linear-gradient(90deg, #f0cc4a, transparent);
+  font-weight: 600;
+  color: var(--gold);
 }
 
 .nav-toggle {
@@ -1021,9 +966,8 @@ textarea {
 
 @media (max-width: 680px) {
   .brand-text strong {
-    font-size: 1.62rem;
+    font-size: 1.45rem;
     letter-spacing: 0.02em;
-    transform: rotate(-2deg);
   }
 
   .brand-text span {
