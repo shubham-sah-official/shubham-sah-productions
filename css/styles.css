@@ -40,7 +40,7 @@ body {
   line-height: 1.65;
   min-height: 100vh;
   overflow-x: hidden;
-  animation: pageEnter 0.22s ease both;
+  animation: pageEnter 0.5s ease both;
 }
 
 html::before {
@@ -53,7 +53,7 @@ html::before {
   border-bottom: 1px solid rgba(240, 204, 74, 0.55);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   transform: translateY(0);
-  animation: veilReveal 0.28s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation: veilReveal 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
 html.is-leaving {
