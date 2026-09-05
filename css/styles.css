@@ -40,6 +40,66 @@ body {
   line-height: 1.65;
   min-height: 100vh;
   overflow-x: hidden;
+  animation: pageEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(240, 204, 74, 0.55);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  transform: translateY(0);
+  animation: veilReveal 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+html.is-leaving {
+  cursor: wait;
+}
+
+html.is-leaving::before {
+  pointer-events: auto;
+  animation: veilCover 0.45s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+html.is-leaving body {
+  animation: pageLeave 0.4s ease forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pageLeave {
+  to {
+    opacity: 0.35;
+  }
+}
+
+@keyframes veilReveal {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-101%);
+  }
+}
+
+@keyframes veilCover {
+  from {
+    transform: translateY(101%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 img {
@@ -178,6 +238,22 @@ h3 {
   .brand img,
   .brand-logo {
     animation: none;
+  }
+
+  html::before {
+    animation: none;
+    transform: translateY(-101%);
+  }
+
+  body,
+  html.is-leaving body {
+    animation: none;
+    opacity: 1;
+  }
+
+  html.is-leaving::before {
+    animation: none;
+    transform: translateY(-101%);
   }
 }
 
