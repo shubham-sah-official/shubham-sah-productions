@@ -1,101 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logoTitle">
-  <title id="logoTitle">Shubham Sah Productions</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Shubham Sah Productions">
   <defs>
     <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8F6914"/>
-      <stop offset="18%" stop-color="#E8C547"/>
-      <stop offset="36%" stop-color="#FFF6C8"/>
-      <stop offset="50%" stop-color="#FFFFFF"/>
-      <stop offset="64%" stop-color="#F0CC4A"/>
-      <stop offset="82%" stop-color="#C9A227"/>
+      <stop offset="0%" stop-color="#7A5810"/>
+      <stop offset="16%" stop-color="#E8C547"/>
+      <stop offset="32%" stop-color="#FFF6C8"/>
+      <stop offset="48%" stop-color="#FFFFFF"/>
+      <stop offset="64%" stop-color="#F5D76E"/>
+      <stop offset="80%" stop-color="#E0B83A"/>
       <stop offset="100%" stop-color="#B8860B"/>
-      <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="3.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="2.8s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="ribbon" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#AA771C"/>
-      <stop offset="25%" stop-color="#FCF6BA"/>
-      <stop offset="50%" stop-color="#FFFFFF"/>
-      <stop offset="75%" stop-color="#FBF5B7"/>
-      <stop offset="100%" stop-color="#AA771C"/>
-      <animate attributeName="x1" values="-1;1" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="0;2" dur="2.4s" repeatCount="indefinite"/>
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="1.6" result="b"/>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <style>
-      .spin { transform-origin: 60px 60px; animation: spin 10s linear infinite; }
-      .counter { transform-origin: 60px 60px; animation: spin 16s linear infinite reverse; }
-      .dash {
-        fill: none;
-        stroke: url(#metal);
-        stroke-width: 2.2;
-        stroke-dasharray: 8 10;
-        animation: crawl 2.8s linear infinite;
-      }
-      .s-stroke {
-        fill: none;
-        stroke: url(#ribbon);
-        stroke-width: 7.2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        filter: url(#softGlow);
-        stroke-dasharray: 220;
-        animation: drawLoop 5.5s ease-in-out infinite;
-      }
-      .spark { animation: blink 1.6s ease-in-out infinite; }
-      .wave { animation: wave 1.8s ease-in-out infinite; }
+      .spin { transform-origin: 60px 60px; animation: spin 9s linear infinite; }
+      .rev { transform-origin: 60px 60px; animation: spin 14s linear infinite reverse; }
+      .iris { transform-origin: 60px 60px; animation: iris 2.8s ease-in-out infinite; }
+      .s { filter: url(#glow); }
+      .orbit { animation: none; }
       @keyframes spin { to { transform: rotate(360deg); } }
-      @keyframes crawl { to { stroke-dashoffset: -36; } }
-      @keyframes drawLoop {
-        0%, 100% { stroke-dashoffset: 0; }
-        50% { stroke-dashoffset: 80; }
-      }
-      @keyframes blink {
-        0%, 100% { opacity: 0.35; }
-        50% { opacity: 1; }
-      }
-      @keyframes wave {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-2px); }
+      @keyframes iris {
+        0%, 100% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(18deg) scale(0.9); }
       }
       @media (prefers-reduced-motion: reduce) {
-        .spin, .counter, .dash, .s-stroke, .spark, .wave { animation: none; }
-        .s-stroke { stroke-dashoffset: 0; }
+        .spin, .rev, .iris { animation: none; }
       }
     </style>
   </defs>
 
-  <rect x="6" y="6" width="108" height="108" rx="28" fill="#0c0a07" stroke="url(#metal)" stroke-width="2.4"/>
+  <rect x="5" y="5" width="110" height="110" rx="26" fill="#090806" stroke="url(#metal)" stroke-width="2.6"/>
 
   <g class="spin">
-    <rect x="24" y="24" width="72" height="72" rx="8" fill="none" stroke="url(#metal)" stroke-width="1.2" transform="rotate(45 60 60)"/>
+    <polygon points="60,10 110,60 60,110 10,60" fill="none" stroke="url(#metal)" stroke-width="1.4" opacity="0.9"/>
+  </g>
+  <g class="rev">
+    <rect x="32" y="32" width="56" height="56" fill="none" stroke="url(#metal)" stroke-width="1" opacity="0.55" transform="rotate(45 60 60)"/>
   </g>
 
-  <circle class="dash" cx="60" cy="60" r="46"/>
-
-  <g class="counter">
-    <circle cx="60" cy="14" r="2.4" fill="#fff6c8" class="spark"/>
-    <circle cx="106" cy="60" r="1.7" fill="#e8c547"/>
-    <circle cx="60" cy="106" r="2.4" fill="#fff6c8" class="spark"/>
-    <circle cx="14" cy="60" r="1.7" fill="#e8c547"/>
+  <g class="iris" fill="url(#metal)">
+    <path d="M60 44 L68 48 L66 58 L60 54 Z" opacity="0.85"/>
+    <path d="M68 48 L78 54 L72 64 L66 58 Z" opacity="0.55"/>
+    <path d="M78 54 L78 66 L68 72 L72 64 Z" opacity="0.85"/>
+    <path d="M78 66 L68 76 L60 72 L68 72 Z" opacity="0.55"/>
+    <path d="M68 76 L52 76 L52 68 L60 72 Z" opacity="0.85"/>
+    <path d="M52 76 L42 66 L48 58 L52 68 Z" opacity="0.55"/>
+    <path d="M42 66 L42 54 L52 48 L48 58 Z" opacity="0.85"/>
+    <path d="M42 54 L52 44 L60 44 L52 48 Z" opacity="0.55"/>
   </g>
 
-  <path class="s-stroke" d="M38 40
-    C40 26 58 22 72 26
-    C86 30 90 44 76 52
-    C62 60 44 62 42 76
-    C40 92 58 100 78 94"/>
+  <path class="s" fill="none" stroke="url(#metal)" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"
+    d="M36 38 C40 24 62 22 76 28 C90 34 88 50 72 56 C54 63 40 66 40 78 C40 94 62 102 82 92"/>
 
-  <g class="wave" fill="none" stroke="url(#metal)" stroke-width="1.6" stroke-linecap="round" opacity="0.9">
-    <path d="M36 88 Q42 82 48 88 T60 88 T72 88 T84 88"/>
+  <g fill="none" stroke="url(#metal)" stroke-width="1.8" stroke-linecap="round" opacity="0.95">
+    <path d="M34 92 L40 84 L46 92 L52 84 L58 92 L64 84 L70 92 L76 84 L86 92"/>
   </g>
 
-  <circle r="3" fill="#fff6c8" filter="url(#softGlow)">
-    <animateMotion dur="5.5s" repeatCount="indefinite" path="M60,18 A42,42 0 1,1 59.9,18"/>
+  <circle r="3.2" fill="#ffffff">
+    <animateMotion dur="4.8s" repeatCount="indefinite" path="M60,16 A44,44 0 1,1 59.9,16"/>
   </circle>
 </svg>
