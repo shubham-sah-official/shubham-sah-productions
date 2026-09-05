@@ -17,7 +17,7 @@
   --header-h: 96px;
   --max: 1180px;
   --font-display: "Syne", system-ui, sans-serif;
-  --font-brand: "Shrikhand", "Syne", system-ui, sans-serif;
+  --font-brand: "Bebas Neue", "Syne", system-ui, sans-serif;
   --font-body: "Outfit", system-ui, sans-serif;
 }
 
@@ -188,10 +188,11 @@ h3 {
 
 .brand-text strong {
   font-family: var(--font-brand);
-  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
+  font-size: clamp(1.85rem, 3vw, 2.45rem);
   font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1;
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+  text-transform: uppercase;
   background: linear-gradient(110deg, #7a5810 0%, #e8c547 16%, #fff6c8 32%, #ffffff 48%, #f5d76e 62%, #fffef5 76%, #e0b83a 100%);
   background-size: 200% 200%;
   animation: metalShift 3.8s ease infinite;
@@ -972,7 +973,8 @@ textarea {
 
 @media (max-width: 680px) {
   .brand-text strong {
-    font-size: 1.42rem;
+    font-size: 1.55rem;
+    letter-spacing: 0.04em;
   }
 
   .brand-text span {
