@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Shubham Sah Productions">
+  <defs>
+    <linearGradient id="gold" x1="12" y1="8" x2="108" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff4b8"/>
+      <stop offset="50%" stop-color="#f0cc4a"/>
+      <stop offset="100%" stop-color="#c9a227"/>
+    </linearGradient>
+    <style>
+      .shutter {
+        transform-origin: 60px 64px;
+        animation: spin 16s linear infinite;
+      }
+      .sound {
+        transform-origin: 60px 46px;
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+      .couple {
+        transform-origin: 60px 70px;
+        animation: breath 3.2s ease-in-out infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.85; }
+        50% { transform: scale(1.12); opacity: 1; }
+      }
+      @keyframes breath {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-1.4px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .shutter, .sound, .couple { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <!-- Camera body -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="#0b0a09" stroke="url(#gold)" stroke-width="2.6"/>
+  <rect x="42" y="10" width="36" height="10" rx="3" fill="url(#gold)"/>
+  <circle cx="96" cy="22" r="4" fill="none" stroke="url(#gold)" stroke-width="1.6"/>
+
+  <!-- Camera lens / shutter ring -->
+  <circle cx="60" cy="66" r="42" fill="#120e08" stroke="url(#gold)" stroke-width="2"/>
+  <g class="shutter" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 9">
+    <circle cx="60" cy="66" r="37"/>
+  </g>
+  <circle cx="60" cy="66" r="31" fill="none" stroke="#f0cc4a" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- Couple inside the lens -->
+  <g class="couple" fill="url(#gold)">
+    <!-- left person -->
+    <circle cx="44" cy="62" r="11.5"/>
+    <path d="M30 92 C30 78 36 72 48 72 C54 72 58 76 60 80 C52 86 40 92 30 92Z"/>
+    <!-- right person -->
+    <circle cx="76" cy="62" r="11.5"/>
+    <path d="M90 92 C90 78 84 72 72 72 C66 72 62 76 60 80 C68 86 80 92 90 92Z"/>
+  </g>
+
+  <!-- Shared microphone between them -->
+  <g fill="url(#gold)">
+    <rect x="57.2" y="52" width="5.6" height="28" rx="1.8"/>
+    <rect x="54" y="78" width="12" height="4" rx="1.2"/>
+  </g>
+  <g class="sound" fill="none" stroke="url(#gold)">
+    <ellipse cx="60" cy="46" rx="11" ry="13" stroke-width="2.2"/>
+    <ellipse cx="60" cy="46" rx="6.5" ry="8" stroke-width="1.3"/>
+    <ellipse cx="60" cy="46" rx="2.4" ry="3" stroke-width="1.1"/>
+  </g>
+</svg>
