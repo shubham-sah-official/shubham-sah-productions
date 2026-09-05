@@ -221,7 +221,7 @@ h3 {
   color: var(--ink);
 }
 
-.site-nav a.active::after {
+.site-nav a.active:not(.btn)::after {
   content: "";
   position: absolute;
   left: 0;
