@@ -671,6 +671,7 @@ section {
 .story-list li {
   padding-left: 1rem;
   border-left: 2px solid var(--gold);
+  line-height: 1.65;
 }
 
 .story-list strong {
