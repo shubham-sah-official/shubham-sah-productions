@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Shubham Sah Productions">
   <defs>
     <linearGradient id="royal" x1="18" y1="8" x2="104" y2="112" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFF1B8"/>
-      <stop offset="35%" stop-color="#E8C547"/>
-      <stop offset="68%" stop-color="#C9A227"/>
-      <stop offset="100%" stop-color="#7A5910"/>
+      <stop offset="0%" stop-color="#E8D48A"/>
+      <stop offset="35%" stop-color="#D4AF37"/>
+      <stop offset="68%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#6B4F0E"/>
     </linearGradient>
     <linearGradient id="royalSoft" x1="30" y1="24" x2="90" y2="96" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#F7E7A1"/>
-      <stop offset="100%" stop-color="#B8860B"/>
+      <stop offset="0%" stop-color="#E0C56A"/>
+      <stop offset="100%" stop-color="#8C6914"/>
     </linearGradient>
     <radialGradient id="disc" cx="50%" cy="42%" r="62%">
       <stop offset="0%" stop-color="#2a2214"/>
@@ -30,15 +30,7 @@
       .shine {
         animation: sweep 4.8s ease-in-out infinite;
       }
-      .letter {
-        fill: none;
-        stroke: url(#royal);
-        stroke-width: 2.4;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        animation: draw 2.4s ease forwards;
-      }
-      .fill-ss { opacity: 0; animation: fadeIn 0.6s 1.6s ease forwards; }
+      .fill-ss { animation: letterGlow 3.6s ease-in-out infinite; }
       @keyframes spin { to { transform: rotate(360deg); } }
       @keyframes iris {
         0%, 100% { transform: scale(1); opacity: 0.85; }
@@ -54,15 +46,12 @@
         42% { opacity: 0; }
         100% { transform: translateX(90px) rotate(18deg); opacity: 0; }
       }
-      @keyframes draw {
-        from { stroke-dasharray: 180; stroke-dashoffset: 180; }
-        to { stroke-dasharray: 180; stroke-dashoffset: 0; }
+      @keyframes letterGlow {
+        0%, 100% { opacity: 0.92; }
+        50% { opacity: 1; }
       }
-      @keyframes fadeIn { to { opacity: 1; } }
       @media (prefers-reduced-motion: reduce) {
-        .reel, .sprocket, .iris, .pulse, .shine, .letter, .fill-ss { animation: none; }
-        .fill-ss { opacity: 1; }
-        .letter { stroke-dashoffset: 0; }
+        .reel, .sprocket, .iris, .pulse, .shine, .fill-ss { animation: none; }
       }
     </style>
   </defs>
@@ -75,10 +64,10 @@
 
   <g class="sprocket">
     <circle cx="60" cy="60" r="41" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.55"/>
-    <circle cx="60" cy="18" r="2.1" fill="#f3e08a"/>
-    <circle cx="60" cy="102" r="2.1" fill="#f3e08a"/>
-    <circle cx="18" cy="60" r="2.1" fill="#f3e08a"/>
-    <circle cx="102" cy="60" r="2.1" fill="#f3e08a"/>
+    <circle cx="60" cy="18" r="2.1" fill="#d4af37"/>
+    <circle cx="60" cy="102" r="2.1" fill="#d4af37"/>
+    <circle cx="18" cy="60" r="2.1" fill="#d4af37"/>
+    <circle cx="102" cy="60" r="2.1" fill="#d4af37"/>
     <circle cx="30.4" cy="30.4" r="2.1" fill="#c9a227"/>
     <circle cx="89.6" cy="30.4" r="2.1" fill="#c9a227"/>
     <circle cx="30.4" cy="89.6" r="2.1" fill="#c9a227"/>
@@ -99,8 +88,7 @@
 
   <g transform="translate(60 62)">
     <text class="fill-ss" x="0" y="8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="url(#royal)" letter-spacing="-1">SS</text>
-    <text class="letter" x="0" y="8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="none" letter-spacing="-1">SS</text>
   </g>
 
-  <rect class="shine" x="8" y="-10" width="18" height="140" fill="#fff8d6" opacity="0" style="mix-blend-mode:screen"/>
+  <rect class="shine" x="8" y="-10" width="18" height="140" fill="#e8d48a" opacity="0" style="mix-blend-mode:screen"/>
 </svg>

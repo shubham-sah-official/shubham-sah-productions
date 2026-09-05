@@ -4,11 +4,11 @@
   --bg-card: #1a1714;
   --ink: #f6f1e8;
   --muted: #b8aea0;
-  --gold: #c9a227;
-  --gold-bright: #f0d36a;
-  --gold-deep: #8c6914;
-  --gold-dim: rgba(212, 175, 55, 0.18);
-  --gold-button: linear-gradient(180deg, #f6e7a2 0%, #e0c04a 38%, #c9a227 72%, #8c6914 100%);
+  --gold: #c5a028;
+  --gold-bright: #d4af37;
+  --gold-deep: #6b4f0e;
+  --gold-dim: rgba(184, 134, 11, 0.2);
+  --gold-button: linear-gradient(165deg, #e4c878 0%, #c9a227 36%, #a67c12 74%, #6b4f0e 100%);
   --line: rgba(246, 241, 232, 0.1);
   --danger: #c45c4a;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
@@ -190,7 +190,7 @@ h3 {
   font-size: clamp(1.42rem, 2.4vw, 1.85rem);
   font-weight: 600;
   letter-spacing: 0.01em;
-  background: linear-gradient(180deg, #fff6cc 0%, #f4d36a 36%, #d4af37 68%, #f0e0a0 100%);
+  background: linear-gradient(180deg, #f0e0a8 0%, #d4af37 42%, #b8860b 78%, #e4d090 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
