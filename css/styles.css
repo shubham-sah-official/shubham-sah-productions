@@ -665,7 +665,7 @@ section {
 .story-list {
   margin-top: 1.4rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .story-list li {
