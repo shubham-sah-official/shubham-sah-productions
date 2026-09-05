@@ -18,5 +18,3 @@ Open `index.html` in a browser, or serve the folder:
 ```bash
 python3 -m http.server 8080
 ```
-
-Social links, phone, and address are placeholders — replace them with live profiles before publishing.
