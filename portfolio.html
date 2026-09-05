@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Shubham Sah Productions</title>
+  <meta name="description" content="Selected wedding films, photography and music videos from Shubham Sah Productions.">
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Shubham Sah Productions logo">
+        <span class="brand-text"><strong>Shubham Sah</strong><span>Productions</span></span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html" class="btn btn-gold">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="hero-media">
+        <img src="assets/images/cinematic-shoot.png" alt="Cinematic landscape still">
+      </div>
+      <div class="container">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Work we still love watching.</h1>
+        <p class="lede">A living reel of weddings, portraits, records and films. Filter by craft or wander.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <input type="radio" name="filter" id="f-all" checked hidden>
+        <input type="radio" name="filter" id="f-wedding" hidden>
+        <input type="radio" name="filter" id="f-photo" hidden>
+        <input type="radio" name="filter" id="f-music" hidden>
+        <input type="radio" name="filter" id="f-cinema" hidden>
+        <div class="filters">
+          <label for="f-all">All work</label>
+          <label for="f-wedding">Wedding cinema</label>
+          <label for="f-photo">Photography</label>
+          <label for="f-music">Music videos</label>
+          <label for="f-cinema">Cinematic</label>
+        </div>
+        <div class="gallery">
+          <article data-cat="wedding">
+            <img src="assets/images/wedding-film.png" alt="Palace wedding film">
+            <div>
+              <p class="eyebrow">Wedding</p>
+              <h3>The Jaisalmer vows</h3>
+              <p>A three-day film for Anika &amp; Veer. “They found the quiet in a very loud wedding.”</p>
+            </div>
+          </article>
+          <article data-cat="photo">
+            <img src="assets/images/prewedding.png" alt="Lakeside pre-wedding">
+            <div>
+              <p class="eyebrow">Pre-wedding</p>
+              <h3>Meera &amp; Rohan · Udaipur</h3>
+              <p>Mist, boats, no posing beyond a walk. The couple still use frame 47 as their lock screen.</p>
+            </div>
+          </article>
+          <article data-cat="photo">
+            <img src="assets/images/maternity.png" alt="Maternity portrait">
+            <div>
+              <p class="eyebrow">Maternity</p>
+              <h3>Waiting for Tara</h3>
+              <p>Window-lit studio session. “I forgot the camera was there, which is the whole point.”</p>
+            </div>
+          </article>
+          <article data-cat="photo">
+            <img src="assets/images/newborn.png" alt="Newborn photograph">
+            <div>
+              <p class="eyebrow">Newborn</p>
+              <h3>First week</h3>
+              <p>Safety-first wraps, two hours, one perfect nap. Parents received a linen album six weeks later.</p>
+            </div>
+          </article>
+          <article data-cat="photo">
+            <img src="assets/images/model-portfolio.png" alt="Model editorial">
+            <div>
+              <p class="eyebrow">Portfolio</p>
+              <h3>Aisha · Lookbook</h3>
+              <p>Four looks, one concrete wall, a book that booked two campaigns.</p>
+            </div>
+          </article>
+          <article data-cat="music">
+            <img src="assets/images/music-video.png" alt="Rooftop music video">
+            <div>
+              <p class="eyebrow">Music video</p>
+              <h3>Night Bloom</h3>
+              <p>Single visual for an independent artist. Performance at 2 a.m., city as the second vocal.</p>
+            </div>
+          </article>
+          <article data-cat="cinema">
+            <img src="assets/images/cinematic-shoot.png" alt="Short film still">
+            <div>
+              <p class="eyebrow">Cinematic</p>
+              <h3>Afterlight</h3>
+              <p>A short about leaving a city. Shot in two twilights, mixed in our room.</p>
+            </div>
+          </article>
+          <article data-cat="wedding">
+            <img src="assets/images/hero-cinematic.png" alt="Goa wedding">
+            <div>
+              <p class="eyebrow">Wedding</p>
+              <h3>Priya &amp; Kabir · Goa</h3>
+              <p>Seaside mandap, monsoon pause, a highlight that still makes the family cry.</p>
+            </div>
+          </article>
+          <article data-cat="cinema">
+            <img src="assets/images/kids-birthday.png" alt="Birthday film">
+            <div>
+              <p class="eyebrow">Family film</p>
+              <h3>Aarav turns six</h3>
+              <p>A birthday cut that feels like a Wes Anderson party without the fussiness.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="assets/images/logo.png" alt="">
+            <span class="brand-text"><strong>Shubham Sah</strong><span>Productions</span></span>
+          </a>
+          <p style="margin-top:1rem">A boutique house for wedding films, photography and original music. Mumbai · Destination worldwide.</p>
+          <div class="socials" style="margin-top:1rem">
+            <a href="https://www.instagram.com/shubhamsahproductions" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://www.youtube.com/@shubhamsahproductions" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+            <a href="https://www.facebook.com/shubhamsahproductions" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+            <a href="https://wa.me/919820012345" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+          </div>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Studio</h3>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Visit</h3>
+          <p>Studio 4, Link Road<br>Andheri West, Mumbai 400053</p>
+          <p><a href="tel:+919820012345">+91 98200 12345</a><br><a href="mailto:hello@shubhamsahproductions.com">hello@shubhamsahproductions.com</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© 2026 Shubham Sah Productions. All rights reserved.</span>
+        <span>Crafted in light and tape hiss.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
