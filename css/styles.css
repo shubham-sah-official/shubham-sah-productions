@@ -829,6 +829,12 @@ textarea {
   color: var(--gold);
 }
 
+.socials a svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 .socials a:hover {
   background: var(--gold);
   color: #111;
