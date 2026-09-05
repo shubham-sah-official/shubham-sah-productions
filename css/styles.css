@@ -159,22 +159,24 @@ h3 {
 
 .brand img,
 .brand-logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
   object-fit: contain;
   border: none;
-  filter: drop-shadow(0 0 16px rgba(255, 241, 176, 0.35));
+  filter: drop-shadow(0 0 14px rgba(240, 204, 74, 0.4));
   background: transparent;
   animation: logoGlow 2.8s ease-in-out infinite;
 }
 
 @keyframes logoGlow {
-  0%, 100% { filter: drop-shadow(0 0 8px rgba(232, 197, 71, 0.28)); }
-  50% { filter: drop-shadow(0 0 20px rgba(255, 246, 200, 0.7)); }
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(240, 204, 74, 0.28)); }
+  50% { filter: drop-shadow(0 0 18px rgba(240, 204, 74, 0.65)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .brand img,
+  .brand-logo,
   .brand-text strong {
     animation: none;
   }
@@ -983,9 +985,9 @@ textarea {
 
   .brand img,
   .brand-logo {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
   }
 
   .pillars,
