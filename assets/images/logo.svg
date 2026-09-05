@@ -1,94 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Shubham Sah Productions">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Shubham Sah Productions</title>
   <defs>
-    <linearGradient id="royal" x1="18" y1="8" x2="104" y2="112" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#E8D48A"/>
-      <stop offset="35%" stop-color="#D4AF37"/>
-      <stop offset="68%" stop-color="#B8860B"/>
-      <stop offset="100%" stop-color="#6B4F0E"/>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8F6914"/>
+      <stop offset="18%" stop-color="#E8C547"/>
+      <stop offset="36%" stop-color="#FFF6C8"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="64%" stop-color="#F0CC4A"/>
+      <stop offset="82%" stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="3.2s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="royalSoft" x1="30" y1="24" x2="90" y2="96" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#E0C56A"/>
-      <stop offset="100%" stop-color="#8C6914"/>
+    <linearGradient id="ribbon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#AA771C"/>
+      <stop offset="25%" stop-color="#FCF6BA"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="75%" stop-color="#FBF5B7"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+      <animate attributeName="x1" values="-1;1" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;2" dur="2.4s" repeatCount="indefinite"/>
     </linearGradient>
-    <radialGradient id="disc" cx="50%" cy="42%" r="62%">
-      <stop offset="0%" stop-color="#2a2214"/>
-      <stop offset="70%" stop-color="#120e08"/>
-      <stop offset="100%" stop-color="#070604"/>
-    </radialGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.4" result="b"/>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <style>
-      .reel { transform-origin: 60px 60px; animation: spin 14s linear infinite; }
-      .sprocket { transform-origin: 60px 60px; animation: spin 14s linear infinite reverse; }
-      .iris { transform-origin: 60px 60px; animation: iris 3.6s ease-in-out infinite; }
-      .pulse { transform-origin: 60px 60px; animation: pulse 3.6s ease-in-out infinite; }
-      .shine {
-        animation: sweep 4.8s ease-in-out infinite;
+      .spin { transform-origin: 60px 60px; animation: spin 10s linear infinite; }
+      .counter { transform-origin: 60px 60px; animation: spin 16s linear infinite reverse; }
+      .dash {
+        fill: none;
+        stroke: url(#metal);
+        stroke-width: 2.2;
+        stroke-dasharray: 8 10;
+        animation: crawl 2.8s linear infinite;
       }
-      .fill-ss { animation: letterGlow 3.6s ease-in-out infinite; }
+      .s-stroke {
+        fill: none;
+        stroke: url(#ribbon);
+        stroke-width: 7.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: url(#softGlow);
+        stroke-dasharray: 220;
+        animation: drawLoop 5.5s ease-in-out infinite;
+      }
+      .spark { animation: blink 1.6s ease-in-out infinite; }
+      .wave { animation: wave 1.8s ease-in-out infinite; }
       @keyframes spin { to { transform: rotate(360deg); } }
-      @keyframes iris {
-        0%, 100% { transform: scale(1); opacity: 0.85; }
-        50% { transform: scale(0.86); opacity: 1; }
+      @keyframes crawl { to { stroke-dashoffset: -36; } }
+      @keyframes drawLoop {
+        0%, 100% { stroke-dashoffset: 0; }
+        50% { stroke-dashoffset: 80; }
       }
-      @keyframes pulse {
-        0%, 100% { opacity: 0.45; }
+      @keyframes blink {
+        0%, 100% { opacity: 0.35; }
         50% { opacity: 1; }
       }
-      @keyframes sweep {
-        0% { transform: translateX(-80px) rotate(18deg); opacity: 0; }
-        18% { opacity: 0.7; }
-        42% { opacity: 0; }
-        100% { transform: translateX(90px) rotate(18deg); opacity: 0; }
-      }
-      @keyframes letterGlow {
-        0%, 100% { opacity: 0.92; }
-        50% { opacity: 1; }
+      @keyframes wave {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-2px); }
       }
       @media (prefers-reduced-motion: reduce) {
-        .reel, .sprocket, .iris, .pulse, .shine, .fill-ss { animation: none; }
+        .spin, .counter, .dash, .s-stroke, .spark, .wave { animation: none; }
+        .s-stroke { stroke-dashoffset: 0; }
       }
     </style>
   </defs>
 
-  <circle cx="60" cy="60" r="57" fill="url(#disc)" stroke="url(#royal)" stroke-width="2.2"/>
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="#0c0a07" stroke="url(#metal)" stroke-width="2.4"/>
 
-  <g class="reel" filter="url(#glow)">
-    <circle cx="60" cy="60" r="49" fill="none" stroke="url(#royal)" stroke-width="5" stroke-dasharray="6 7" stroke-linecap="round"/>
+  <g class="spin">
+    <rect x="24" y="24" width="72" height="72" rx="8" fill="none" stroke="url(#metal)" stroke-width="1.2" transform="rotate(45 60 60)"/>
   </g>
 
-  <g class="sprocket">
-    <circle cx="60" cy="60" r="41" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.55"/>
-    <circle cx="60" cy="18" r="2.1" fill="#d4af37"/>
-    <circle cx="60" cy="102" r="2.1" fill="#d4af37"/>
-    <circle cx="18" cy="60" r="2.1" fill="#d4af37"/>
-    <circle cx="102" cy="60" r="2.1" fill="#d4af37"/>
-    <circle cx="30.4" cy="30.4" r="2.1" fill="#c9a227"/>
-    <circle cx="89.6" cy="30.4" r="2.1" fill="#c9a227"/>
-    <circle cx="30.4" cy="89.6" r="2.1" fill="#c9a227"/>
-    <circle cx="89.6" cy="89.6" r="2.1" fill="#c9a227"/>
+  <circle class="dash" cx="60" cy="60" r="46"/>
+
+  <g class="counter">
+    <circle cx="60" cy="14" r="2.4" fill="#fff6c8" class="spark"/>
+    <circle cx="106" cy="60" r="1.7" fill="#e8c547"/>
+    <circle cx="60" cy="106" r="2.4" fill="#fff6c8" class="spark"/>
+    <circle cx="14" cy="60" r="1.7" fill="#e8c547"/>
   </g>
 
-  <g class="iris">
-    <polygon points="60,32 76,41 76,59 60,50" fill="#d4af37" opacity="0.18"/>
-    <polygon points="76,41 92,50 84,66 68,57" fill="#c9a227" opacity="0.16"/>
-    <polygon points="84,66 76,82 60,88 68,70" fill="#d4af37" opacity="0.18"/>
-    <polygon points="60,88 44,82 36,66 52,70" fill="#c9a227" opacity="0.16"/>
-    <polygon points="36,66 28,50 44,41 52,57" fill="#d4af37" opacity="0.18"/>
-    <polygon points="44,41 60,32 68,50 52,50" fill="#c9a227" opacity="0.16"/>
+  <path class="s-stroke" d="M38 40
+    C40 26 58 22 72 26
+    C86 30 90 44 76 52
+    C62 60 44 62 42 76
+    C40 92 58 100 78 94"/>
+
+  <g class="wave" fill="none" stroke="url(#metal)" stroke-width="1.6" stroke-linecap="round" opacity="0.9">
+    <path d="M36 88 Q42 82 48 88 T60 88 T72 88 T84 88"/>
   </g>
 
-  <circle class="pulse" cx="60" cy="60" r="28" fill="none" stroke="url(#royalSoft)" stroke-width="1.2"/>
-  <circle cx="60" cy="60" r="24" fill="#0d0b07" stroke="#8c6914" stroke-width="0.6"/>
-
-  <g transform="translate(60 62)">
-    <text class="fill-ss" x="0" y="8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="url(#royal)" letter-spacing="-1">SS</text>
-  </g>
-
-  <rect class="shine" x="8" y="-10" width="18" height="140" fill="#e8d48a" opacity="0" style="mix-blend-mode:screen"/>
+  <circle r="3" fill="#fff6c8" filter="url(#softGlow)">
+    <animateMotion dur="5.5s" repeatCount="indefinite" path="M60,18 A42,42 0 1,1 59.9,18"/>
+  </circle>
 </svg>

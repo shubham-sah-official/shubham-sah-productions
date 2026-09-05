@@ -4,18 +4,20 @@
   --bg-card: #1a1714;
   --ink: #f6f1e8;
   --muted: #b8aea0;
-  --gold: #c5a028;
-  --gold-bright: #d4af37;
-  --gold-deep: #6b4f0e;
-  --gold-dim: rgba(184, 134, 11, 0.2);
-  --gold-button: linear-gradient(165deg, #e4c878 0%, #c9a227 36%, #a67c12 74%, #6b4f0e 100%);
+  --gold: #e8c547;
+  --gold-bright: #fff1b0;
+  --gold-deep: #9a6b12;
+  --gold-dim: rgba(232, 197, 71, 0.22);
+  --gold-metal: linear-gradient(120deg, #9a7018 0%, #e8c547 14%, #fff6c8 28%, #ffffff 42%, #f0cc4a 56%, #c9a227 72%, #fff1b0 86%, #b8860b 100%);
+  --gold-button: var(--gold-metal);
   --line: rgba(246, 241, 232, 0.1);
   --danger: #c45c4a;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
   --radius: 18px;
-  --header-h: 92px;
+  --header-h: 96px;
   --max: 1180px;
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-brand: "Unbounded", system-ui, sans-serif;
   --font-body: "Outfit", system-ui, sans-serif;
 }
 
@@ -104,9 +106,9 @@ h2,
 h3,
 .display {
   font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
 }
 
 h1 {
@@ -157,24 +159,27 @@ h3 {
 
 .brand img,
 .brand-logo {
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
   object-fit: contain;
   border: none;
-  filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.38));
+  filter: drop-shadow(0 0 16px rgba(255, 241, 176, 0.35));
   background: transparent;
-  animation: logoGlow 3.8s ease-in-out infinite;
+  animation: logoGlow 2.8s ease-in-out infinite;
 }
 
 @keyframes logoGlow {
-  0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.28)); }
-  50% { filter: drop-shadow(0 0 18px rgba(240, 211, 106, 0.55)); }
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(232, 197, 71, 0.28)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 246, 200, 0.7)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .brand img,
-  .brand-logo {
+  .brand-logo,
+  .brand-text strong,
+  .btn-gold,
+  .btn-gold::after {
     animation: none;
   }
 }
@@ -186,22 +191,25 @@ h3 {
 }
 
 .brand-text strong {
-  font-family: var(--font-display);
-  font-size: clamp(1.42rem, 2.4vw, 1.85rem);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  background: linear-gradient(180deg, #f0e0a8 0%, #d4af37 42%, #b8860b 78%, #e4d090 100%);
+  font-family: var(--font-brand);
+  font-size: clamp(1.28rem, 2.1vw, 1.62rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  background: linear-gradient(110deg, #9a7018 0%, #e8c547 18%, #fff6c8 38%, #ffffff 50%, #f0cc4a 64%, #c9a227 82%, #fff1b0 100%);
+  background-size: 180% 180%;
+  animation: metalShift 4.5s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(80, 55, 8, 0.45));
+  filter: drop-shadow(0 0 10px rgba(232, 197, 71, 0.28));
 }
 
 .brand-text span {
-  margin-top: 0.18rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.34em;
+  margin-top: 0.22rem;
+  font-family: var(--font-brand);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--gold-bright);
@@ -270,24 +278,47 @@ h3 {
   transition: 0.25s ease;
   font-size: 0.88rem;
   letter-spacing: 0.04em;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .btn-gold {
-  background: var(--gold-button);
+  background: var(--gold-metal);
+  background-size: 220% 220%;
+  animation: metalShift 4.5s ease infinite;
   color: #1a1204;
-  font-weight: 600;
-  border-color: rgba(255, 236, 170, 0.35);
+  font-weight: 700;
+  border-color: rgba(255, 246, 200, 0.55);
   box-shadow:
-    inset 0 1px 0 rgba(255, 250, 220, 0.55),
-    0 8px 22px rgba(140, 105, 20, 0.32);
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 0 18px rgba(232, 197, 71, 0.28),
+    0 8px 22px rgba(154, 107, 18, 0.38);
+}
+
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: glare 2.6s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .btn-gold:hover {
   transform: translateY(-1px);
-  filter: brightness(1.06);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 250, 220, 0.7),
-    0 12px 28px rgba(140, 105, 20, 0.42);
+  filter: brightness(1.08);
+}
+
+@keyframes metalShift {
+  0%, 100% { background-position: 0% 40%; }
+  50% { background-position: 100% 60%; }
+}
+
+@keyframes glare {
+  0%, 30% { transform: translateX(-120%); }
+  70%, 100% { transform: translateX(120%); }
 }
 
 .btn-ghost {
@@ -329,7 +360,7 @@ h3 {
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(11, 10, 9, 0.35) 0%, rgba(11, 10, 9, 0.55) 45%, rgba(11, 10, 9, 0.92) 100%),
-    radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.22), transparent 45%);
+    radial-gradient(ellipse at 20% 20%, rgba(255, 241, 176, 0.18), transparent 45%);
 }
 
 .hero-content {
@@ -367,12 +398,12 @@ h3 {
 
 .hero-meta strong {
   display: block;
-  color: var(--gold);
+  color: var(--gold-bright);
   font-family: var(--font-display);
   font-size: 1.7rem;
-  letter-spacing: 0;
+  letter-spacing: -0.04em;
   text-transform: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .page-hero {
@@ -610,7 +641,9 @@ section {
 
 .testimonial blockquote {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   line-height: 1.45;
   margin-bottom: 1rem;
 }
@@ -735,7 +768,8 @@ section {
 #f-photo:checked ~ .filters label[for="f-photo"],
 #f-music:checked ~ .filters label[for="f-music"],
 #f-cinema:checked ~ .filters label[for="f-cinema"] {
-  background: var(--gold-button);
+  background: var(--gold-metal);
+  background-size: 180% 180%;
   color: #1a1204;
   border-color: var(--gold-bright);
 }
@@ -822,7 +856,7 @@ textarea {
 }
 
 .socials a:hover {
-  background: var(--gold-button);
+  background: var(--gold-metal);
   color: #1a1204;
   border-color: var(--gold-bright);
 }
@@ -970,6 +1004,7 @@ textarea {
   .brand-logo {
     width: 52px;
     height: 52px;
+    border-radius: 16px;
   }
 
   .pillars,
