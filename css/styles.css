@@ -17,7 +17,7 @@
   --header-h: 96px;
   --max: 1180px;
   --font-display: "Syne", system-ui, sans-serif;
-  --font-brand: "Syne", system-ui, sans-serif;
+  --font-brand: "Imperial Script", "Great Vibes", cursive;
   --font-body: "Outfit", system-ui, sans-serif;
 }
 
@@ -189,11 +189,11 @@ h3 {
 }
 
 .brand-text strong {
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1.08;
+  font-family: var(--font-brand);
+  font-size: clamp(1.85rem, 3.4vw, 2.55rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
   background: linear-gradient(110deg, #7a5810 0%, #e8c547 16%, #fff6c8 32%, #ffffff 48%, #f5d76e 62%, #fffef5 76%, #e0b83a 100%);
   background-size: 200% 200%;
   animation: metalShift 3.8s ease infinite;
@@ -974,8 +974,8 @@ textarea {
 
 @media (max-width: 680px) {
   .brand-text strong {
-    font-size: 1.2rem;
-    letter-spacing: -0.04em;
+    font-size: 1.55rem;
+    letter-spacing: 0.02em;
   }
 
   .brand-text span {
